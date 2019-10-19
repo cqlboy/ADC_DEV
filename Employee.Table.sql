@@ -8,6 +8,7 @@ GO
 
 CREATE TABLE [dbo].[Employee](
 	[id] [int] NOT NULL,
+	FName varchar(20)
 PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

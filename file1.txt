@@ -1,1 +1,2 @@
-empty file in branch = master
+timestamp:  10/18/2019
+source:  C:\Git\REPO\ADC_DEV

@@ -12,7 +12,8 @@ REM Specify the path of the dacpac files
 SET DATABASEDIR=C:\Git\Development\
  
 REM The database for export and import
-SET DATABASENAME=dacpac_db_qa
+SET SRCDATABASENAME=dacpac_db_dev
+SET TGTDATABASENAME=dacpac_db_qa
  
 REM The SQL Server Source instance
 SET SOURCESERVERNAME=192.168.1.101
@@ -25,23 +26,20 @@ REM Get the datetime in a format that can go in a filename.
 For /f "tokens=2-4 delims=/ " %%a in ("%date%") do (set mydate=%%c-%%a-%%b)
 For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
 echo %mydate%_%mytime%
- 
-REM Export the database 
-REM %SQLPACKAGE% /a:Export /ssn:%SOURCESERVERNAME% /sdn:%DATABASENAME% /tf:%DATABASEDIR%%DATABASENAME%_%mydate%_%mytime%.bacpac
 
 REM ****** EXTRACT dacpac File *******
-%SQLPACKAGE% /a:Extract /of:False /tf:%DATABASEDIR%%DATABASENAME%_%mydate%_%mytime%.DacPac /scs:"Data Source=%SOURCESERVERNAME%;Initial Catalog=%DATABASENAME%;Integrated Security=SSPI;Persist Security Info=False;"
+%SQLPACKAGE% /a:Extract /of:False /tf:%DATABASEDIR%%SRCDATABASENAME%_%mydate%_%mytime%.DacPac /scs:"Data Source=%SOURCESERVERNAME%;Initial Catalog=%SRCDATABASENAME%;Integrated Security=SSPI;Persist Security Info=False;"
 
 
 REM Find the latest DACPAC file using the pattern matching technique
-FOR /F "tokens=*" %%d IN ('DIR %DATABASEDIR%%DATABASENAME%*.DacPac /B /OD /A-D') DO SET DACPACNAME=%%d
+FOR /F "tokens=*" %%d IN ('DIR %DATABASEDIR%%SRCDATABASENAME%*.DacPac /B /OD /A-D') DO SET DACPACNAME=%%d
 IF "%DACPACNAME%"=="" GOTO :DacPacfilenotfound
 
 SET DATABASEFILE=%DATABASEDIR%%DACPACNAME%
  
 
 REM Publish DacPac
-%SQLPACKAGE% /a:Publish /sf:%DATABASEDIR%%DATABASENAME%_%mydate%_%mytime%.DacPac /tcs:"Data Source=%TARGETSERVERNAME%;Initial Catalog=%DATABASENAME%;Integrated Security=SSPI;Persist Security Info=False;"
+%SQLPACKAGE% /a:Publish /sf:%DATABASEDIR%%SRCDATABASENAME%_%mydate%_%mytime%.DacPac /tcs:"Data Source=%TARGETSERVERNAME%;Initial Catalog=%TGTDATABASENAME%;Integrated Security=SSPI;Persist Security Info=False;"
 IF %ERRORLEVEL% NEQ 0 GOTO :ERRORBLOCK
  
 GOTO :complete
