@@ -7,10 +7,17 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-History
---------------------------------------------------------
+********************* History **************************
+Date  	 Change By	Desc
+-------- -------------	--------------------------------
+20191021 BColson	Added comments section.
+20191021 bcolson	Made this change, use XCOPY from 
+			source to local prod folders
+20191021 bcolson	change to verify git trigger results
 
-*/
+
+*********************************************************/
+
 CREATE TABLE [dbo].[Employee](
 	[id] [int] NOT NULL,
 	FName varchar(20)
