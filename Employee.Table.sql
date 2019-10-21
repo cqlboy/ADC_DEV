@@ -6,6 +6,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*
+History
+--------------------------------------------------------
+
+*/
 CREATE TABLE [dbo].[Employee](
 	[id] [int] NOT NULL,
 	FName varchar(20)
