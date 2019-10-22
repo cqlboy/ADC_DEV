@@ -24,7 +24,7 @@ Date  	 Change By	Desc
 as
 
 insert Employee
-select @id
+select @id, 'test'
 GO
 
 
