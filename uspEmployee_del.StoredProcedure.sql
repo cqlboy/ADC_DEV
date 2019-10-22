@@ -9,7 +9,7 @@ create procedure [dbo].[uspEmployee_del]
 
 	@id int
 /*
-********************* History **************************
+********************* History ***************************
 Date  	 Change By	Desc
 -------- -------------	--------------------------------
 20191021 BColson	Created
