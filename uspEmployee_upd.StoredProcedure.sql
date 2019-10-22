@@ -19,7 +19,7 @@ as
 -- simple update statement
 update Employee
 set fname = 'Change first on ADC_DEV'
-WHERE id = 1
+WHERE id = 2
 GO
 
 
