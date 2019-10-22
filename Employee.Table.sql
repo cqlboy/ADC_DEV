@@ -14,7 +14,7 @@ Date  	 Change By	Desc
 20191021 bcolson	Made this change, use XCOPY from 
 			source to local prod folders
 20191021 bcolson	change to verify git trigger results
-20191021 bcolson	timestamp: 5:05PM
+20191021 bcolson	timestamp: 5:38PM
 
 
 *********************************************************/

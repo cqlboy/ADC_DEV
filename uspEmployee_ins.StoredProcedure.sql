@@ -7,6 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+
+
+create procedure [dbo].[uspEmployee_ins]
+
+	@id int
 /*
 ********************* History **************************
 Date  	 Change By	Desc
@@ -15,11 +20,6 @@ Date  	 Change By	Desc
 
 
 *********************************************************/
-
-create procedure [dbo].[uspEmployee_ins]
-
-	@id int
-
 as
 
 insert Employee
