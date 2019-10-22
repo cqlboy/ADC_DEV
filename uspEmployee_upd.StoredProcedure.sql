@@ -1,6 +1,6 @@
 
 if object_id('uspEmployee_upd') is not null
-	drop procedure uspEmployee_upd	--- SP_HELPTEXT 'uspEmployee_upd'
+	drop procedure uspEmployee_upd
 GO
 
 create procedure [dbo].[uspEmployee_upd]
