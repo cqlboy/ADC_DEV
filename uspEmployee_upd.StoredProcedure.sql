@@ -16,14 +16,14 @@ Date  	 Change By	Desc
 
 *********************************************************/
 
-create procedure [dbo].[uspEmployee_ins]
+create procedure [dbo].[uspEmployee_upd]
 
 	@id int
 
 as
 
-insert Employee
-select @id
+update Employee
+set fname = 'test'
 GO
 
 
