@@ -17,6 +17,7 @@ create procedure [dbo].[uspEmployee_ins]
 Date  	 Change By	Desc
 -------- -------------	--------------------------------
 20191021 BColson	Created
+			New
 
 
 *********************************************************/
