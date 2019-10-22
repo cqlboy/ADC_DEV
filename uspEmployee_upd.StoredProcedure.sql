@@ -1,10 +1,6 @@
 
-
-/****** Object:  StoredProcedure [dbo].[uspEmployee_ins]    Script Date: 10/18/2019 4:38:48 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+if object_id('uspEmployee_upd') is not null
+	drop procedure uspEmployee_upd	--- SP_HELPTEXT 'uspEmployee_upd'
 GO
 
 create procedure [dbo].[uspEmployee_upd]
@@ -15,7 +11,7 @@ create procedure [dbo].[uspEmployee_upd]
 Date  	 Change By		Desc
 -------- -------------	--------------------------------
 20191021 BColson		Created.
-20191022 BColson		Add comments + WHERE
+20191022 BColson		Add comments + WHERE.
 
 
 *********************************************************/
