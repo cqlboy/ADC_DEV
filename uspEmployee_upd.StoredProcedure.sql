@@ -18,7 +18,7 @@ Date  	 Change By		Desc
 as
 -- simple update statement
 update Employee
-set fname = 'test'
+set fname = 'Change first on ADC_DEV'
 WHERE id = 1
 GO
 
