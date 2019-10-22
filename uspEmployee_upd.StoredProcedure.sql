@@ -7,23 +7,23 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-
 create procedure [dbo].[uspEmployee_upd]
 
 	@id int
 /*
 ********************* History **************************
-Date  	 Change By	Desc
+Date  	 Change By		Desc
 -------- -------------	--------------------------------
-20191021 BColson	Created
+20191021 BColson		Created.
+20191022 BColson		Add comments + WHERE
 
 
 *********************************************************/
 as
-
+-- simple update statement
 update Employee
 set fname = 'test'
+WHERE id = 1
 GO
 
 
