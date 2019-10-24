@@ -6,22 +6,18 @@ GO
 
 SET QUOTED_IDENTIFIER ON
 GO
-
-/*
-********************* History **************************
+create view [dbo].[vwEmployees]
+/********************** History **************************
 Date  	 Change By	Desc
 -------- -------------	--------------------------------
 20191021 BColson	Created
-
+20191024 JamesS		Little change.
 
 *********************************************************/
-
-create view [dbo].[vwEmployees] as
-
-
+as
 select *
 from Employee
-
+where id > 0
 GO
 
 
