@@ -15,7 +15,7 @@ Date  	 Change By	Desc
 			source to local prod folders
 20191021 bcolson	change to verify git trigger results
 20191021 bcolson	timestamp: 5:38PM
-
+20191024 jamess		just a change for source control.
 
 *********************************************************/
 
